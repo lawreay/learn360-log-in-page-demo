@@ -1,0 +1,105 @@
+body{
+background-image:url(Computer-Science-HD-Image.png);
+}
+.bodys{
+background-image: url(R\ \(1\).jpg);
+background-repeat: no-repeat;
+border: 400px;
+max-width: 800px;
+border: solid   wheat 10px;
+border-radius: 30px;
+padding-top: 10px;
+box-shadow: 20px 20px 20px rgb(65, 57, 4);
+}
+
+.welcome_txt{
+border: 10px solid;
+border-color: rgb(232, 212, 33);
+max-width: 600px;
+background-image: url(Computer-Science-Desktop-Background.jpg) ;
+border-radius:50px;
+opacity: 0.8;
+
+;
+
+}
+
+.inputs{
+border: 10px solid;
+border-color: rgb(235, 235, 7);
+max-width: 600px;
+background-blend-mode: multiply;
+border-radius:50px;
+margin-top: 20px;
+padding-top: 20px;
+
+
+padding-bottom: 30px;
+}
+
+
+.Welcome_top{
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    color: white;
+}
+
+.logo{
+    width: 100px;
+   margin-top: 0px;
+   padding: 0px;
+   border: solid;
+   border-color: white;
+   border-radius: 30px;
+ padding-left: 10px;
+padding-right: 10px;
+background-color: white;
+}
+.note{
+color: red;
+font-weight: bolder;
+font-size: larger;
+font-size: 30px;
+margin-top: 0px;
+background-color: aliceblue;
+border-radius: 30px;
+}
+
+
+.personal_info{
+    display: block;
+    height: 80px;
+    width: 410px;
+    border: solid;
+    border-radius: 30px;
+    margin-top: 20px;
+    opacity: 10px;
+    margin-bottom: 20px;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: whitesmoke;
+    color: black;
+
+}
+
+
+
+.submit{
+    background-color: green;
+    width: 410px;
+    height: 50px;
+    font-weight: bolder;
+    font-size: 20px;
+    border-radius: 30px;
+    opacity: 20px;
+}
+
+.footer{
+    width: 200px;
+    color: #000;
+
+    background-color: lightgreen;
+    margin: 10px;
+height: 50px;;
+}
