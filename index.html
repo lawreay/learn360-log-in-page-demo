@@ -1,44 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Log In</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learn360 (Demo)</title>
     <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <center>   <div class="bodys">
-        <div class="welcome_txt">
-                <img class="logo" src="logo.png" alt="">
-                <h1 class="Welcome_top">Welcome to Learn360</h1>
-                <p class="note">please enter your name and Password</p>
+    <main class="page-root">
+        <section class="card glass-card demo-card">
+            <header class="hero">
+                <img class="logo" src="logo.png" alt="Learn360 logo">
+                <h1 class="title gradient-text">Welcome to Learn360</h1>
+                <p class="subtitle">This is a lightweight demo. Use the form below to explore the look & feel.</p>
+            </header>
+
+            <form class="form" onsubmit="return false;">
+                <label class="sr-only" for="name">Name or Email</label>
+                <input id="name" class="input" type="text" placeholder="Name or Email">
+
+                <label class="sr-only" for="password">Password</label>
+                <input id="password" class="input" type="password" placeholder="Password">
+
+                <div class="actions">
+                    <button type="button" class="btn primary">Log In</button>
+                    <button type="button" class="btn ghost">Create New Account</button>
+                </div>
+            </form>
+
+            <div class="secondary-actions">
+                <button class="link-btn">Change Language</button>
+                <button class="link-btn">Help</button>
+                <button class="link-btn">Report Problem</button>
+                <button class="link-btn">About Us</button>
+            </div>
+
+            <footer class="card-footer">
+                <small>Full site available — contact the author to get the full site.</small>
+            </footer>
+        </section>
+    </main>
+
+
+    <div id="demo-modal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="demo-title">
+        <div class="modal-panel" role="document">
+            <button class="modal-close" aria-label="Close">✕</button>
+            <h2 id="demo-title" class="modal-title">This is a demo</h2>
+            <p class="modal-body">You've opened a demonstration of Learn360. The full site is not included in this demo.</p>
+
+            <section class="contact">
+                <p>To get the full site, contact:</p>
+                <p class="contact-name">Lawrence Phuka Chikapa — ICT Educator &amp; Creative Technologist</p>
+                <p>📧 Email: <a href="mailto:lawreay1@gmail.com">lawreay1@gmail.com</a></p>
+                <p>💬 WhatsApp: <a href="https://wa.me/265993147700" target="_blank" rel="noopener">+265 993 147 700</a></p>
+                <p>Or visit: <a href="https://lawreay.github.io/portfolio/" target="_blank" rel="noopener">Lawrence's Website</a></p>
+            </section>
+
+            <div class="modal-actions">
+                <button id="visit-portfolio" class="btn primary">Lawrence's Website</button>
+                <button id="go-back" class="btn ghost">Go back</button>
+            </div>
         </div>
+        <div class="modal-backdrop" data-close></div>
+    </div>
 
+    <script>
 
-        <div  class="inputs">
-                <input class="personal_info" type="text" placeholder="Name Or Email">
-                 <input class="personal_info" type="password" placeholder="Passworrd">
-                <button class="submit">Log In</button>
+        (function () {
+            const modal = document.getElementById('demo-modal');
+            const openButtons = document.querySelectorAll('button');
+            const closeButtons = modal.querySelectorAll('.modal-close, .modal-backdrop');
+            const goBackBtn = document.getElementById('go-back');
+            const visitBtn = document.getElementById('visit-portfolio');
 
-        </div>
-     
-        <div class="inputs">
+            function openModal() {
+                modal.setAttribute('aria-hidden', 'false');
+                document.documentElement.style.overflow = 'hidden';
+                modal.classList.add('open');
+                
+                modal.querySelector('.modal-panel').focus();
+            }
 
-          <button class="submit">Create New Acount</button>
+            function closeModal() {
+                modal.setAttribute('aria-hidden', 'true');
+                document.documentElement.style.overflow = '';
+                modal.classList.remove('open');
+            }
 
-        </div>
-        <div class="inputs">
-       <button class="footer"> change Language </button> <button class="footer"> Help </button><button class="footer">Report Problem</button> <button class="footer">About Us </button>
+            openButtons.forEach(btn => {
+               
+                if (modal.contains(btn)) return;
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    openModal();
+                });
+            });
 
+                    closeButtons.forEach(el => el.addEventListener('click', closeModal));
 
+                    /
+                    if (goBackBtn) {
+                        goBackBtn.addEventListener('click', () => {
+                         
+                            if (history.length > 1) history.back(); else closeModal();
+                        });
+                    }
 
-        </div>
+                    
+                    visitBtn.addEventListener('click', () => {
+                        window.open('https://lawreay.github.io/portfolio/', '_blank', 'noopener');
+                    });
 
-
-
-
-</div>
-    </center>
+         
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
+            });
+        })();
+    </script>
 </body>
 </html>
