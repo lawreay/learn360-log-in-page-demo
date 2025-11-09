@@ -198,60 +198,7 @@ body {
   text-decoration: underline;
 }
 
-.offer-text {
-  font-size: 1.1rem;
-  line-height: 1.5;
-  color: #fff;
-  margin-bottom: 1.5rem;
-}
 
-.contact-buttons {
-  display: flex;
-  gap: 1rem;
-  margin: 1.5rem 0;
-}
-
-.contact-btn {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.75rem 1.25rem;
-  border-radius: 10px;
-  font-weight: 600;
-  transition: transform 0.2s, opacity 0.2s;
-  text-decoration: none !important;
-  flex: 1;
-  justify-content: center;
-}
-
-.contact-btn:hover {
-  transform: translateY(-2px);
-  opacity: 0.9;
-}
-
-.contact-btn.email {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white !important;
-}
-
-.contact-btn.whatsapp {
-  background: #25D366;
-  color: white !important;
-}
-
-.portfolio-link {
-  text-align: center;
-  margin-top: 1.5rem;
-  padding-top: 1rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.popup .contact-info p {
-  margin: 0.75rem 0;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: rgba(255, 255, 255, 0.9);
-}
 
 .sr-only { position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden; }
 
@@ -310,70 +257,136 @@ body {
     </main>
 
 
-    <div id="popup" class="popup" role="dialog" aria-hidden="true">
+    <div id="popup" class="popup" role="dialog" aria-labelledby="popup-title">
       <div class="popup-backdrop" data-close></div>
       <div class="popup-panel">
         <button class="popup-close" aria-label="Close popup">×</button>
         
-        <h2 class="popup-title">Get Your Professional Website Today! 🌟</h2>
+        <h2 id="popup-title" class="popup-title">This is a Demo</h2>
         <div class="popup-body">
-          <p class="offer-text">Looking for an affordable, high-quality website? I create modern, responsive websites tailored to your needs at competitive prices.</p>
+          <p>You've opened a demonstration version of New Learn360. The full New site will be publishs soon.</p>
+          
+          <div class="contact-info">
+            <p>To get the full site, contact:</p>
+            <p class="role">Lawrence Phuka Chikapa<br>ICT Educator & Creative Technologist</p>
+            <p>📧 Email: <a href="mailto:lawreay1@gmail.com">lawreay1@gmail.com</a></p>
+            <p>💬 WhatsApp: <a href="https://wa.me/265993147700" target="_blank" rel="noopener">+265 993 147 700</a></p>
+            <p>🌐 Portfolio: <a href="https://lawreay.github.io/portfolio/" target="_blank" rel="noopener">lawreay.github.io/portfolio</a></p>
+          </div>
+          
+          <p>Experience the Old Learn360 platform at <a href="https://learn360.free.nf/" target="_blank" rel="noopener">learn360.free.nf</a></p>
+        </div>
+
+        <div class="popup-actions">
+          <button class="popup-btn primary" onclick="window.open('https://learn360.free.nf/', '_blank')">Visit Full Site</button>
+          <button class="popup-btn secondary" data-close>Continue Demo</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="ad-popup" class="popup" role="dialog" aria-labelledby="ad-popup-title">
+      <div class="popup-backdrop" data-close></div>
+      <div class="popup-panel">
+        <button class="popup-close" aria-label="Close popup">×</button>
+        
+        <h2 id="ad-popup-title" class="popup-title">Get Your Professional Website Today! 🌟</h2>
+        <div class="popup-body">
+          <p class="offer-text" style="font-size: 1.1rem; line-height: 1.5;">Looking for an affordable, high-quality website? I create modern, responsive websites tailored to your needs at competitive prices.</p>
           
           <div class="contact-info">
             <p class="role">Lawrence Phuka Chikapa<br>Professional Web Developer</p>
-            <p>✨ Custom Website Development</p>
-            <p>🎯 Modern & Mobile-Friendly Design</p>
-            <p>⚡ Fast Delivery & Affordable Rates</p>
-            <div class="contact-buttons">
-              <a href="mailto:lawreay1@gmail.com?subject=Website%20Development%20Inquiry&body=Hi%20Lawrence%2C%0A%0AI'm%20interested%20in%20getting%20a%20website%20for%20my%20business.%20Please%20send%20me%20more%20information%20about%20your%20services%20and%20pricing.%0A%0ABest%20regards" class="contact-btn email">
+            <p style="display: flex; align-items: center; gap: 0.5rem;">✨ Custom Website Development</p>
+            <p style="display: flex; align-items: center; gap: 0.5rem;">🎯 Modern & Mobile-Friendly Design</p>
+            <p style="display: flex; align-items: center; gap: 0.5rem;">⚡ Fast Delivery & Affordable Rates</p>
+            
+            <div style="display: flex; gap: 1rem; margin: 1.5rem 0;">
+              <a href="mailto:lawreay1@gmail.com?subject=Website%20Development%20Inquiry&body=Hi%20Lawrence%2C%0A%0AI'm%20interested%20in%20getting%20a%20website.%20Please%20send%20me%20more%20information%20about%20your%20services%20and%20pricing.%0A%0ABest%20regards" 
+                 class="popup-btn primary" style="flex: 1; display: inline-flex; align-items: center; justify-content: center; text-decoration: none;">
                 📧 Email Me
               </a>
-              <a href="https://wa.me/265993147700?text=Hi%20Lawrence%2C%20I'm%20interested%20in%20getting%20a%20website.%20Can%20you%20tell%20me%20more%20about%20your%20services%3F" target="_blank" rel="noopener" class="contact-btn whatsapp">
+              <a href="https://wa.me/265993147700?text=Hi%20Lawrence%2C%20I'm%20interested%20in%20getting%20a%20website.%20Can%20you%20tell%20me%20more%20about%20your%20services%3F" 
+                 target="_blank" rel="noopener" 
+                 class="popup-btn primary" style="flex: 1; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; background: #25D366;">
                 💬 WhatsApp Me
               </a>
             </div>
           </div>
           
-          <p class="portfolio-link">View my portfolio at <a href="https://lawreay.github.io/portfolio/" target="_blank" rel="noopener">lawreay.github.io/portfolio</a></p>
+          <p style="text-align: center; margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid rgba(255, 255, 255, 0.1);">
+            View my portfolio at <a href="https://lawreay.github.io/portfolio/" target="_blank" rel="noopener">lawreay.github.io/portfolio</a>
+          </p>
         </div>
 
         <div class="popup-actions">
-          <button class="popup-btn primary" onclick="window.open('https://wa.me/265993147700?text=Hi%20Lawrence%2C%20I%20saw%20your%20web%20development%20ad.%20I%27d%20like%20to%20discuss%20creating%20a%20website.', '_blank')">Get Started</button>
+          <button class="popup-btn primary" onclick="window.open('https://lawreay.github.io/portfolio/', '_blank')">See My Work</button>
           <button class="popup-btn secondary" data-close>Maybe Later</button>
         </div>
       </div>
     </div>
 
     <script>
-   
-    setTimeout(() => {
-      const popup = document.getElementById('popup');
-      if (popup) {
-        popup.classList.add('open');
-        popup.setAttribute('aria-hidden', 'false');
+    (function() {
+      const demoPopup = document.getElementById('popup');
+      const adPopup = document.getElementById('ad-popup');
+      const openButtons = document.querySelectorAll('button');
+      
+      function openPopup(popup) {
+        if (popup) {
+          popup.classList.add('open');
+          popup.setAttribute('aria-hidden', 'false');
+          document.documentElement.style.overflow = 'hidden';
+        }
       }
-    }, 2500); 
-    
-    document.querySelectorAll('[data-close]').forEach(el => {
-      el.addEventListener('click', () => {
-        const popup = document.getElementById('popup');
+
+      function closePopup(popup) {
         if (popup) {
           popup.classList.remove('open');
           popup.setAttribute('aria-hidden', 'true');
-        }
-      });
-    });
-
-   
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        const popup = document.getElementById('popup');
-        if (popup?.classList.contains('open')) {
-          popup.classList.remove('open');
-          popup.setAttribute('aria-hidden', 'true');
+          document.documentElement.style.overflow = '';
         }
       }
-    });
+
+      // Show ad popup after 0.9 minutes
+      setTimeout(() => {
+        if (!demoPopup.classList.contains('open')) {
+          openPopup(adPopup);
+        }
+      }, 54000); // 54 seconds = 0.9 minutes
+    
+      // Demo popup triggers
+      openButtons.forEach(btn => {
+        if (!demoPopup.contains(btn) && !adPopup.contains(btn)) {
+          btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            closePopup(adPopup); // Close ad if it's open
+            openPopup(demoPopup);
+          });
+        }
+      });
+
+      // Close button handlers for both popups
+      document.querySelectorAll('[data-close]').forEach(el => {
+        el.addEventListener('click', () => {
+          if (el.closest('#popup')) {
+            closePopup(demoPopup);
+          } else if (el.closest('#ad-popup')) {
+            closePopup(adPopup);
+          }
+        });
+      });
+
+      // Escape key handler for both popups
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          if (demoPopup?.classList.contains('open')) {
+            closePopup(demoPopup);
+          }
+          if (adPopup?.classList.contains('open')) {
+            closePopup(adPopup);
+          }
+        }
+      });
+    })();
   </script>
 </body>
 </html>
