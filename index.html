@@ -345,16 +345,15 @@ body {
     </div>
 
     <script>
-    // Show popup after a delay
+   
     setTimeout(() => {
       const popup = document.getElementById('popup');
       if (popup) {
         popup.classList.add('open');
         popup.setAttribute('aria-hidden', 'false');
       }
-    }, 1500); // Show after 1.5s
-
-    // Close popup handlers
+    }, 2500); 
+    
     document.querySelectorAll('[data-close]').forEach(el => {
       el.addEventListener('click', () => {
         const popup = document.getElementById('popup');
@@ -365,7 +364,7 @@ body {
       });
     });
 
-    // Close with Escape key
+   
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         const popup = document.getElementById('popup');
