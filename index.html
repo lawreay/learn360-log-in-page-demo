@@ -66,17 +66,192 @@ body {
 .card-footer { text-align:center; margin-top: 1rem; opacity: 0.85; }
 
 
-.modal { position: fixed; inset: 0; display: none; align-items: center; justify-content: center; z-index: 1200; }
-.modal.open { display: flex; }
-.modal-backdrop { position: absolute; inset: 0; background: rgba(2,6,23,0.6); backdrop-filter: blur(4px); }
-.modal-panel { position: relative; z-index: 1201; width: 100%; max-width: 720px; background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02)); border-radius: 14px; padding: 1.5rem; box-shadow: 0 20px 60px rgba(2,6,23,0.6); border: 1px solid rgba(255,255,255,0.06); outline: none; }
-.modal-panel:focus { box-shadow: 0 20px 80px rgba(2,6,23,0.7); }
-.modal-title { margin: 0 0 0.35rem; font-size: 1.25rem; }
-.modal-body { margin: 0 0 1rem; color: rgba(230,238,248,0.95); }
-.contact { background: rgba(255,255,255,0.02); padding: 0.75rem; border-radius: 8px; margin-bottom: 1rem; }
-.contact-name { font-weight: 700; margin: 0.25rem 0; }
-.modal-actions { display:flex; gap:0.75rem; justify-content:flex-end; }
-.modal-close { position:absolute; right:0.75rem; top:0.5rem; background:transparent; border:none; font-size:1.1rem; color: rgba(230,238,248,0.8); cursor:pointer; }
+.popup {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.popup.open {
+  display: flex;
+  animation: fadeIn 0.4s ease-out;
+}
+
+.popup-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(2,6,23,0.7);
+  backdrop-filter: blur(4px);
+}
+
+.popup-panel {
+  position: relative;
+  z-index: 2001;
+  width: 100%;
+  max-width: 720px;
+  margin: 1rem;
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+  border-radius: 14px;
+  padding: 1.5rem;
+  box-shadow: 0 20px 60px rgba(2,6,23,0.6);
+  border: 1px solid rgba(255,255,255,0.06);
+  outline: none;
+  animation: slideUp 0.5s ease-out;
+}
+
+.popup-title {
+  margin: 0 0 0.75rem;
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.popup-body {
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 1.5rem;
+}
+
+.popup-close {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  background: transparent;
+  border: none;
+  color: rgba(255,255,255,0.8);
+  cursor: pointer;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  line-height: 1;
+}
+
+.popup-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+.popup-btn {
+  padding: 0.75rem 1.25rem;
+  border-radius: 10px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.popup-btn:hover {
+  transform: translateY(-2px);
+}
+
+.popup-btn.primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.popup-btn.secondary {
+  background: rgba(255,255,255,0.1);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.popup .contact-info {
+  background: rgba(255,255,255,0.03);
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+.popup .contact-info p {
+  margin: 0.5rem 0;
+}
+
+.popup .contact-info .role {
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.75rem;
+}
+
+.popup a {
+  color: #667eea;
+  text-decoration: none;
+}
+
+.popup a:hover {
+  text-decoration: underline;
+}
+
+.offer-text {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: #fff;
+  margin-bottom: 1.5rem;
+}
+
+.contact-buttons {
+  display: flex;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.contact-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.75rem 1.25rem;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: transform 0.2s, opacity 0.2s;
+  text-decoration: none !important;
+  flex: 1;
+  justify-content: center;
+}
+
+.contact-btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.contact-btn.email {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white !important;
+}
+
+.contact-btn.whatsapp {
+  background: #25D366;
+  color: white !important;
+}
+
+.portfolio-link {
+  text-align: center;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.popup .contact-info p {
+  margin: 0.75rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(255, 255, 255, 0.9);
+}
 
 .sr-only { position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden; }
 
@@ -135,80 +310,71 @@ body {
     </main>
 
 
-    <div id="demo-modal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="demo-title">
-        <div class="modal-panel" role="document">
-            <button class="modal-close" aria-label="Close">✕</button>
-            <h2 id="demo-title" class="modal-title">This is a demo</h2>
-            <p class="modal-body">You've opened a demonstration of Learn360. The full site is not included in this demo.</p>
-
-            <section class="contact">
-                <p>To get the full site, contact:</p>
-                <p class="contact-name">Lawrence Phuka Chikapa — ICT Educator &amp; Creative Technologist</p>
-                <p>📧 Email: <a href="mailto:lawreay1@gmail.com">lawreay1@gmail.com</a></p>
-                <p>💬 WhatsApp: <a href="https://wa.me/265993147700" target="_blank" rel="noopener">+265 993 147 700</a></p>
-                <p>Or visit: <a href="https://lawreay.github.io/portfolio/" target="_blank" rel="noopener">Lawrence's Website</a></p>
-            </section>
-
-            <div class="modal-actions">
-                <button id="visit-portfolio" class="btn primary">Lawrence's Website</button>
-                <button id="go-back" class="btn ghost">Go back</button>
+    <div id="popup" class="popup" role="dialog" aria-hidden="true">
+      <div class="popup-backdrop" data-close></div>
+      <div class="popup-panel">
+        <button class="popup-close" aria-label="Close popup">×</button>
+        
+        <h2 class="popup-title">Get Your Professional Website Today! 🌟</h2>
+        <div class="popup-body">
+          <p class="offer-text">Looking for an affordable, high-quality website? I create modern, responsive websites tailored to your needs at competitive prices.</p>
+          
+          <div class="contact-info">
+            <p class="role">Lawrence Phuka Chikapa<br>Professional Web Developer</p>
+            <p>✨ Custom Website Development</p>
+            <p>🎯 Modern & Mobile-Friendly Design</p>
+            <p>⚡ Fast Delivery & Affordable Rates</p>
+            <div class="contact-buttons">
+              <a href="mailto:lawreay1@gmail.com?subject=Website%20Development%20Inquiry&body=Hi%20Lawrence%2C%0A%0AI'm%20interested%20in%20getting%20a%20website%20for%20my%20business.%20Please%20send%20me%20more%20information%20about%20your%20services%20and%20pricing.%0A%0ABest%20regards" class="contact-btn email">
+                📧 Email Me
+              </a>
+              <a href="https://wa.me/265993147700?text=Hi%20Lawrence%2C%20I'm%20interested%20in%20getting%20a%20website.%20Can%20you%20tell%20me%20more%20about%20your%20services%3F" target="_blank" rel="noopener" class="contact-btn whatsapp">
+                💬 WhatsApp Me
+              </a>
             </div>
+          </div>
+          
+          <p class="portfolio-link">View my portfolio at <a href="https://lawreay.github.io/portfolio/" target="_blank" rel="noopener">lawreay.github.io/portfolio</a></p>
         </div>
-        <div class="modal-backdrop" data-close></div>
+
+        <div class="popup-actions">
+          <button class="popup-btn primary" onclick="window.open('https://wa.me/265993147700?text=Hi%20Lawrence%2C%20I%20saw%20your%20web%20development%20ad.%20I%27d%20like%20to%20discuss%20creating%20a%20website.', '_blank')">Get Started</button>
+          <button class="popup-btn secondary" data-close>Maybe Later</button>
+        </div>
+      </div>
     </div>
 
     <script>
+    // Show popup after a delay
+    setTimeout(() => {
+      const popup = document.getElementById('popup');
+      if (popup) {
+        popup.classList.add('open');
+        popup.setAttribute('aria-hidden', 'false');
+      }
+    }, 1500); // Show after 1.5s
 
-        (function () {
-            const modal = document.getElementById('demo-modal');
-            const openButtons = document.querySelectorAll('button');
-            const closeButtons = modal.querySelectorAll('.modal-close, .modal-backdrop');
-            const goBackBtn = document.getElementById('go-back');
-            const visitBtn = document.getElementById('visit-portfolio');
+    // Close popup handlers
+    document.querySelectorAll('[data-close]').forEach(el => {
+      el.addEventListener('click', () => {
+        const popup = document.getElementById('popup');
+        if (popup) {
+          popup.classList.remove('open');
+          popup.setAttribute('aria-hidden', 'true');
+        }
+      });
+    });
 
-            function openModal() {
-                modal.setAttribute('aria-hidden', 'false');
-                document.documentElement.style.overflow = 'hidden';
-                modal.classList.add('open');
-                
-                modal.querySelector('.modal-panel').focus();
-            }
-
-            function closeModal() {
-                modal.setAttribute('aria-hidden', 'true');
-                document.documentElement.style.overflow = '';
-                modal.classList.remove('open');
-            }
-
-            openButtons.forEach(btn => {
-               
-                if (modal.contains(btn)) return;
-                btn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    openModal();
-                });
-            });
-
-                    closeButtons.forEach(el => el.addEventListener('click', closeModal));
-
-                    
-                    if (goBackBtn) {
-                        goBackBtn.addEventListener('click', () => {
-                         
-                            if (history.length > 1) history.back(); else closeModal();
-                        });
-                    }
-
-                    
-                    visitBtn.addEventListener('click', () => {
-                        window.open('https://lawreay.github.io/portfolio/', '_blank', 'noopener');
-                    });
-
-         
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
-            });
-        })();
-    </script>
+    // Close with Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        const popup = document.getElementById('popup');
+        if (popup?.classList.contains('open')) {
+          popup.classList.remove('open');
+          popup.setAttribute('aria-hidden', 'true');
+        }
+      }
+    });
+  </script>
 </body>
 </html>
